@@ -10,7 +10,12 @@ This will create a new virtual environment called 'mpulse. Before beginning work
 ~~~
 workon mpulse 
 ~~~
-You should now see "(mpulse)" immediately to the left of the command prompt. If so, we are ready to begin.
+You should now see "(mpulse)" immediately to the left of the command prompt. 
+Test that you are using a version of python >=3 by entering 
+~~~
+(mpulse)>python --version
+~~~
+The response should be some version of Python 3 or better. If so, we are ready to begin.
 ## Get the code ##
 In the command window, cd to your project directory and clone the mpulse project from my github repository like so
 ~~~
@@ -22,5 +27,6 @@ Run the following code to load the required modules into the virtual environment
 ~~~
 (mpulse)>pip install -r requirements.txt
 ~~~
+
 
  
