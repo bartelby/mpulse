@@ -27,6 +27,18 @@ Run the following code to load the required modules into the virtual environment
 ~~~
 (mpulse)>pip install -r requirements.txt
 ~~~
-
-
- 
+## Initialize the database ##
+First create the migration files. In the command window, run 
+~~~
+(mpulse)>python manage.py makemigrations
+~~~
+Then run 
+~~~
+(mpulse)>python manage.py migrate
+~~~
+## Start the server ##
+To start the server in a test environment (DO NOT use for deployed code)
+~~~
+(mpulse)>python manage.py runserver
+~~~
+The server should start with no stack traces or error messages.  You can test it by opening a browser on the same machine as the code is running on and navigating to http://localhost:8000/admin. You should see the Django administration dashboard. You should be able to administer Groups, Users and Members. Groups and Users are included by default in Django. 
