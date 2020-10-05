@@ -16,7 +16,7 @@ Including another URLconf
 from mpulseapi.models import Member
 from django.urls import path, include
 from django.contrib import admin
-from rest_framework import routers, serializers, viewsets
+from rest_framework import routers, serializers, viewsets, filters
 
 class MemberSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -34,11 +34,7 @@ class MemberViewSet(viewsets.ModelViewSet):
 router = routers.DefaultRouter()
 router.register(r'members', MemberViewSet)
 
-
-admin.autodiscover()
-
 urlpatterns = [
     path('', include(router.urls)),    
     path('admin/', admin.site.urls),
-    path('api/v0.1/', include('rest_framework.urls', namespace='rest_framework'))
 ]
