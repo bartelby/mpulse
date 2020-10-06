@@ -41,4 +41,25 @@ To start the server in a test environment (DO NOT use for deployed code)
 ~~~
 (mpulse)>python manage.py runserver
 ~~~
-The server should start with no stack traces or error messages.  You can test it by opening a browser on the same machine as the code is running on and navigating to http://localhost:8000/admin. You should see the Django administration dashboard. You should be able to administer Groups, Users and Members. Groups and Users are included by default in Django. 
+The server should start with no stack traces or error messages.  You can test it by opening a browser on the same machine as the code is running on and navigating to http://localhost:8000/admin. You should see the Django administration dashboard. You should be able to administer Groups, Users and Members. Groups and Users are included by default in Django
+## The Django Admin Dashboard ##
+Once the web server is running, First visit the Admin dashboard. The default admin user name and password are 'mpulse/mpulse'. In a browser, enter the admin dashboard URL:
+~~~
+http://localhost:8000/admin
+~~~
+The AUTHENTICATION AND AUTHORIZATION section is automatically generated. You can enter and edit new users. The MPULSEAPI section is the admin area for the API, which currently has only one table, Members. You can enter/edit members there. Note that 'Phone number' and 'Client member id' are both constrained to be unique for a given Account id.
+Enter several new members.
+## The GET endpoints ##
+Test the GET endpoints either using a tool like curl or Postman or entering the endpoint URLs in a browser:
+~~~
+http://localhost:8000/member?account_id=<an account id>
+http://localhost:8000/member?phone_umber=<a phone number>
+http://localhost:8000/member?client_memmber_id=<a client member id>
+~~~
+Two endpoints are provided for accessing members by id:
+~~~
+http://localhost:8000/member?id=<an id #>
+http://localhost:8000/members/id
+~~~
+
+ 

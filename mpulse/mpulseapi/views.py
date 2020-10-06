@@ -20,8 +20,7 @@ class MemberViewSet(GenericViewSet,
 class MemberList(generics.ListAPIView):
     queryset = Member.objects.all()
     serializer_class = MemberSerializer
-    filter_fields = ['first_name', 
-                     'last_name', 
+    filter_fields = ['id', 
                      'phone_number',
                      'client_member_id',
                      'account_id']
