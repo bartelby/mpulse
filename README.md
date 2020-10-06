@@ -74,6 +74,6 @@ My time is limited. The Django app is FAR from production-ready.
 3. Error handling is non-existent. Production code should include comprehensive
 4. Production code should be deployed to a production-strength web server, Apache, NGINX or the like. Production code SHOULD NOT be run on the development web server included in Django
 5. The app is running against a sqlite database - something more substantial should be used in production: Oracle if you're rich, PostgreSQL or MySQL if not
-6. There is no input checking - this is also an eggregious gap. The phone_number field should be validated. Non-validated input is a weakness.
+6. There is no input checking - this is also an eggregious gap. The phone_number field should be validated. Non-validated input is a security vulnerability.
 7. The Member object should have a last_modified field to keep track of updates.
 8. I have not run the code through PyLint - the code falls far short of PEP8 compliance.
