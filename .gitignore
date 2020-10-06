@@ -1,1 +1,3 @@
 .DS_Store
+mpulse/db.sqlite3
+mpulse/mpulse/__pycache__/*

@@ -13,28 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from mpulseapi.models import Member
 from django.urls import path, include
 from django.contrib import admin
-from rest_framework import routers, serializers, viewsets, filters
-
-class MemberSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Member
-        fields = ['first_name', 
-                  'last_name',
-                  'phone_number',
-                  'client_member_id',
-                  'account_id']
-    
-class MemberViewSet(viewsets.ModelViewSet):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
-
-router = routers.DefaultRouter()
-router.register(r'members', MemberViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),    
     path('admin/', admin.site.urls),
+    path('', include('mpulseapi.urls')),
 ]
+
