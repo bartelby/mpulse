@@ -68,7 +68,7 @@ Again, using your favorite tool POST a new member. The curl command is
 ~~~
 The response should be a JSON blob showing the newly created data.
 ## Bulk Uploads ##
-Bulk uploads of csf files has been implemented as a django management command. To perform a bulk upload, change to the directory containing manage.py and invoke like so: 
+Bulk uploads of csv files has been implemented as a django management command. To perform a bulk upload, change to the directory containing manage.py and invoke like so: 
 ~~~
 (mpulse)>python manage.py bulk_upload <fully qualified file name of csv file>
 ~~~
