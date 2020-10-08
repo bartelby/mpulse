@@ -6,7 +6,7 @@ Create a new virtual environment for this project by opening a command window (t
 ~~~
 mkvirtualenv mpulse
 ~~~
-This will create a new virtual environment called 'mpulse. Before beginning work on the project by opening the command window and activating the virtual environment by entering
+This will create a new virtual environment called 'mpulse'. Before beginning work on the project by opening the command window and activating the virtual environment by entering
 ~~~
 workon mpulse 
 ~~~
