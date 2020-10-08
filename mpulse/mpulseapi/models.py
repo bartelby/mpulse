@@ -7,7 +7,7 @@ class Member(models.Model):
     last_name=models.CharField(max_length=64)
     phone_number=models.CharField(max_length=32)
     client_member_id=models.CharField(max_length=32)
-    account_id=models.CharField(max_length=32) #ASSUMPTION: This is the healthcare provider account ID.
+    account_id=models.CharField(max_length=32) 
 
     class Meta:
         constraints = [
