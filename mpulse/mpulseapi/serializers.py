@@ -84,6 +84,7 @@ class MemberSerializer(serializers.ModelSerializer):
         read_only_fields = ["id"]
         list_serializer_class = CreateUpdateListSerializer
 
+## This class is not currently used
 class BulkMemberSerializer(serializers.Serializer):
 
     def create(self, validated_data):

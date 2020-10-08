@@ -67,13 +67,22 @@ Again, using your favorite tool POST a new member. The curl command is
 >curl --user mpulse:mpulse -d 'first_name=Ralph&last_name=Mouse&account_id=1&phone_number=3235551234&client_member_id=42' -X localhost:8000/members/
 ~~~
 The response should be a JSON blob showing the newly created data.
+## Bulk Uploads ##
+Bulk uploads of csf files has been implemented as a django management command. To perform a bulk upload, change to the directory containing manage.py and invoke like so: 
+~~~
+(mpulse)>python manage.py bulk_upload <fully qualified file name of csv file>
+~~~
+Uploaded data will print to the console. If data integrity constraints are violated (duplicate phone_number/account_id or client_member_id/account_id) an IntegrityError will be thrown and caught. In this implementation, the offending data will have to be corrected or removed by hand before the file upload can continue.
+>python 
 # WHAT HASN'T BEEN DONE #
 My time is limited. The Django app is FAR from production-ready. 
 1. Most eggregiously, I have not written any unit tests. Unit tests are an absolute necessity in a Python application as errors are not discovered until the erroneous code is invoked. Near-complete test coverage eliminates a host of nasty surprises. 
-2. GET and POST methods have been implemented. PUT and DELETE methods should also be implemented but were not requested.
-3. Error handling is non-existent. Production code should include comprehensive
+2. ~~GET and POST methods have been implemented. PUT and DELETE methods should also be implemented but were not requested.~~
+3. Error handling is nearly non-existent. Production code should include comprehensive error handling.
 4. Production code should be deployed to a production-strength web server, Apache, NGINX or the like. Production code SHOULD NOT be run on the development web server included in Django
 5. The app is running against a sqlite database - something more substantial should be used in production: Oracle if you're rich, PostgreSQL or MySQL if not
 6. There is no input checking - this is also an eggregious gap. The phone_number field should be validated. Non-validated input is a security vulnerability.
 7. The Member object should have a last_modified field to keep track of updates.
 8. I have not run the code through PyLint - the code falls far short of PEP8 compliance.
+9. Bulk insertion is not fully implemented as an http endpoint, but rather as a custom manage.py command. See above for details
+10. Logging should be implemented. 
